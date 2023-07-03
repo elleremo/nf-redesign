@@ -1,0 +1,28 @@
+@import '../vars';
+
+.select-list{
+    display: flex;
+    list-style: none;
+
+    padding-left: 0;
+    margin-left: 0;
+}
+
+.select-list__item{
+    margin-left: 6px;
+
+    &:first-child{
+        margin-left: 0;
+    }
+    
+    @media (min-width: @md){
+        margin-left: 9px;
+    }
+}
+
+.select-list--horizontal{
+
+}
+.select-list--scrollable{
+    
+}

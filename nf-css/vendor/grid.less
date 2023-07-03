@@ -1,0 +1,235 @@
+@import "../vars.less";
+
+@breakcount: 12;
+
+.gapvars(){
+  @xs: 0.25rem;
+  @sm: 0.5rem;
+  @md: 0.75rem;
+  @lg: 1rem;
+  @big: 1.25rem;
+}
+
+.breakpoint() {
+  sm: 480px;
+  md: 720px;
+  lg: 1140px;
+  big: 1440px;
+}
+
+/* ==========================
+Col generate functions
+- basic col: .col.is-sm-6
+- col offset: .col.is-sm-offset-6
+-------------------------- */
+
+
+.col-grid-helpers(@break:none, @col:none) {
+  @_break: if( not (@break=none), escape(%("-%s", @break)) );
+
+  .col.is@{_break}-@{col}{
+    flex: none;
+    width: (100% / ( @breakcount / @col ))
+  }
+  .col.is@{_break}-offset-@{col}{
+    margin-left: (100% / ( @breakcount / @col ))
+  }
+
+};
+
+.col-class-helpers(@break:none) {
+  @_break: if( not (@break=none), escape(%("-%s", @break)) );
+
+  .col.is@{_break}-narrow{
+    flex: none;
+    width: unset;
+  }
+  .col.is@{_break}-auto{
+    flex: none;
+    width: auto;
+  }
+};
+
+/* ==========================
+Row generate functions
+- basic row: .col.is-sm-6
+- col offset: .col.is-sm-offset-6
+-------------------------- */
+ 
+.row-class-helpers(@break:none){
+  @_break: if( not (@break=none), escape(%("-%s", @break)) );
+
+  .row.is@{_break}-row-reverse{
+    flex-direction: row-reverse;
+  }
+  .row.is@{_break}-col-reverse{
+    flex-direction: column-reverse;
+  }
+  .row.is@{_break}-nowrap{
+    flex-wrap: nowrap;
+  }
+
+  .row.is@{_break}-center{
+    justify-content: center;
+  }
+  .row.is@{_break}-start{
+    justify-content: flex-start;
+  }
+  .row.is@{_break}-end{
+    justify-content: flex-end;
+  }
+
+  .row.is@{_break}-between{
+    justify-content: space-between;
+  }
+  .row.is@{_break}-around{
+    justify-content: space-around;
+  }
+  .row.is@{_break}-evenly{
+    justify-content: space-evenly;
+  }
+  .row.is@{_break}-justify-revert{
+    justify-content: revert;
+  }
+
+  .row.is@{_break}-middle{
+    align-items: center;
+  }
+  .row.is@{_break}-top{
+    align-items: flex-start;
+  }
+  .row.is@{_break}-bottom{
+    align-items: flex-end;
+  }
+
+  .row.is@{_break}-align-revert{
+    align-items: revert;
+  }
+  .row.is@{_break}-narrow{
+    .col{
+      flex: none;
+      width: unset;
+    }
+  }
+};
+
+.row-gap-helpers( @break:none,  @gap:none ){
+  @_break: if( not (@break=none), escape(%("-%s", @break)) );
+  @_gap-class: if( not (@gap=none),  escape(@gap*100) );
+
+  .row.is@{_break}-gap-@{_gap-class}{
+    margin-left: -1 * @gap;
+    margin-right: -1 * @gap;
+    .col{
+      padding-left: @gap;
+      padding-right: @gap;
+    }
+  }
+};
+
+.container-class-helper(@break:none){
+  @_break: if( not (@break=none), escape(%("-%s", @break)) );
+
+  .container.is@{_break}-fullwidth{
+    max-width: 100%;
+  }
+  .container.is@{_break}-width-sm{
+    max-width: .breakpoint[sm];
+  }
+  .container.is@{_break}-width-md{
+    max-width: .breakpoint[md];
+  }
+  .container.is@{_break}-width-lg{
+    max-width: .breakpoint[lg];
+  }
+  .container.is@{_break}-width-big{
+    max-width: .breakpoint[big] *1.2 + 0px; 
+  }
+}
+
+// ==================================================
+
+// Start GRID
+
+/* Col default (mobile) grid*/
+.container{
+  width: 100%;
+  max-width: @main-finish-width;
+  margin-left: auto;
+  margin-right: auto;
+ 
+  @media (min-width: @sm) {
+    padding: 0 (@main-gap-desktop/2);
+  }
+
+  @media (min-width: @md) {
+    padding: 0 @main-gap-desktop;
+  }
+}
+
+.container-class-helper(none);
+
+.col{
+  flex: 1;
+  width: 100%;
+  padding: .gapvars[@md];
+
+}
+// .col.is-narrow{
+//   flex: none;
+//   width: unset;
+// }
+.col-class-helpers(none);
+each( range(@breakcount), {
+  .col-grid-helpers(none, @value);
+});
+
+
+/* Row default (mobile) gap and flex*/
+.row {
+  display:flex;
+  margin-left: -1 * .gapvars[@md];
+  margin-right: -1 * .gapvars[@md];
+  flex-wrap: wrap;
+  margin-top:  -1 * .gapvars[@md];
+}
+
+.row:not(:last-child){
+  margin-bottom: .gapvars[@md];
+}
+.row:last-child { 
+  margin-top:  -1 * .gapvars[@md];
+  margin-bottom: -1 * .gapvars[@md];
+}
+  
+.row-class-helpers(none);
+.row-gap-helpers( none, 0rem);
+
+each( .gapvars(), {    
+  .row-gap-helpers( none, @value);
+});
+
+ 
+
+/* breakpoints gap offsets and helpers */
+each(.breakpoint(), .(@v, @k, @i) {
+  @media (min-width: @v) {
+    /*    === GRID COL START ===    */
+   
+    .col-class-helpers(@k);
+  
+    each( range(@breakcount), {
+      .col-grid-helpers(@k, @value);
+    });
+    /*    === GRID ROW START ===    */
+    .row-class-helpers(@k);
+    .row-gap-helpers( @k, 0rem);
+
+    each(.gapvars(), {
+      .row-gap-helpers( @k, @value);
+    });
+
+    /*    === GRID Container START ===    */
+    .container-class-helper(@k);
+  }
+})

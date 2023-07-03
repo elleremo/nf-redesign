@@ -1,0 +1,102 @@
+@xs: 320px;
+@sm: 320px;
+@md: 640px;
+@lg: 1024px;
+@big: 1600px;
+// root vars
+
+@main-width : 1240px;
+@main-gap: 10px;
+@main-gap-desktop: (@main-gap * 4);
+@main-finish-width : (@main-gap-desktop*2 + @main-width);
+
+
+// Z-INDEX
+@nf-zindex-block-a1:-1;
+@nf-zindex-block-0:0;
+@nf-zindex-block-1:1;
+@nf-zindex-block-2:2;
+@nf-zindex-block-3:3;
+@nf-zindex-block-4:4;
+@nf-zindex-block-5:5;
+@nf-zindex-block-6:6;
+@nf-zindex-block-7:7;
+@nf-zindex-block-8:8;
+@nf-zindex-block-9:9;
+@nf-zindex-block-10:10;
+
+
+//FONT
+
+
+// COLORS
+@nf-border-color: #111;
+@nf-main-text-color: #000;
+
+@nf-menu-item-font-size: 14px;
+@nf-menu-item-color: #707070;
+@nf-menu-item-color-hover: white;
+@nf-menu-item-bg-hover: #111;
+
+@nf-menu-item-font-size-level-1: 20px;
+@nf-menu-item-color-level-1: #111;
+
+// COLORS -- product-card
+@nf-product-card-name-color : #111;
+@nf-product-card-price-color : #707070;
+@nf-product-card-badge-color : #FFF;
+@nf-product-card-badge-bg : #111;
+// TEXT
+
+@nf-base-font-size: 12;
+
+:root {
+  --content-width: @main-finish-width;
+  --content-gap: @main-gap;
+  --content-gap-desktop: @main-gap-desktop ;
+
+  --xs: @xs;
+  --sm: @sm;
+  --md: @md;
+  --lg: @lg;
+  --big: @big;
+
+  //FONT
+ 
+  --nf-base-font-size: @nf-base-font-size;
+
+  // COLORS
+  --nf-color: #111;
+
+  --nf-border-color: #111;
+  --nf-main-text-color: #111;
+  
+  --nf-menu-item-font-size: #000;
+  --nf-menu-item-color: #707070;
+  --nf-menu-item-color-level-1: #111;
+  --nf-menu-item-font-size-level-1: 20px;
+  --nf-menu-item-color-hover: white;
+  --nf-menu-item-bg-hover: #111;
+
+  // COLORS -- product-card
+  --nf-product-card-name-color:  #111;
+  --nf-product-card-price-color:  #707070;
+  --nf-product-card-price-color:  #FFF;
+  --nf-product-card-badge-bg : #111;
+
+  //Form
+  --nf-input-bg: #F5F5F5;
+  --nf-input-border-color: #c1c1c1;
+  --nf-input-placeholder: #6c6c6c;
+  --nf-input-label: #6c6c6c;
+  --nf-input-icon: #9a9a9a;
+
+  //Order
+  --nf-order-border-color: #cfcfcf;
+  --nf-order-review-color: #707070;
+  //Cart-item
+  --nf-cart-item-old-price: #707070;
+  //Counter
+  --nf-counter-bg: #F5F5F5;
+}
+

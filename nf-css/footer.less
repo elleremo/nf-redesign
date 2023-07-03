@@ -1,0 +1,257 @@
+.footer {
+    .col {
+        // padding: 40px !important;
+    }
+}
+
+.footer__wp {
+    border-bottom: 1px solid black;
+
+    .container {
+        overflow: hidden;
+        padding: 0;
+        border-top: 1px solid black;
+    }
+
+}
+
+.logo--footer {
+    max-width: unset;
+    height: unset;
+}
+
+.logo__image--footer {
+    max-width: 312px;
+}
+
+.footer__wp-menu-section {
+    display: flex;
+    justify-content: center;
+
+    padding: 40px 0;
+
+    border-right: 1px solid var(--nf-border-color);
+
+    &:last-child {
+        border-right: unset;
+    }
+}
+
+.footer__wp-menu {
+
+    display: inline-flex;
+    flex-direction: column;
+    margin: 10px;
+}
+
+.footer__wp-menu-name {
+    margin-top: 0;
+
+    font-weight: 600;
+    font-size: 16px;
+    line-height: 120%;
+    /* or 19px */
+
+
+    letter-spacing: -0.02em;
+
+    margin-bottom: 40px;
+    color: var(--nf-menu-item-color-level-1);
+}
+
+.footer__wp-menu-list {
+    padding: 0;
+    margin: 0;
+    list-style: none;
+
+}
+
+.footer__wp-menu-item {
+    margin-bottom: 16px;
+
+    &:last-child {
+        // border-right: unset;
+        margin-bottom: 0px;
+    }
+
+    a {
+        font-weight: 500;
+        font-size: 16px;
+        line-height: 120%;
+        /* or 19px */
+
+
+        letter-spacing: -0.02em;
+        color: var(--nf-menu-item-color);
+
+        text-decoration: none;
+
+        &:hover {
+            color: var(--nf-menu-item-color-level-1);
+
+        }
+    }
+
+}
+
+.nf-offer {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.nf-offer__text {
+    font-weight: 500;
+    font-size: 28px;
+    line-height: 100%;
+    /* identical to box height, or 28px */
+
+    display: block;
+    letter-spacing: -0.02em;
+
+    text-align: center;
+}
+
+
+.nf-offer__input-wrapper {
+    label{
+        position: relative;
+        display: block;
+    }
+    input {
+
+        display: block;
+
+        padding: 16px 0px 16px 15px;
+        gap: 10px;
+
+        width: 340px;
+        height: 44px;
+
+        /* Светло-Серый */
+
+        background: #F5F5F5;
+        border-radius: 100px;
+        border: none;
+        padding-right: 30%;
+    }
+
+    button {
+        position: absolute;
+        right: 0;
+        top: 0;
+        height: 100%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+
+        padding: 16px;
+        gap: 10px;
+
+        // width: 99px;
+        height: 100%;
+
+        /* Черный */
+
+        background: #111111;
+        border-radius: 100px;
+        color: white;
+
+        font-size: 12px;
+        border: none;
+
+        cursor: pointer;
+    }
+
+}
+
+// footer__social =========================================
+
+.footer__social {
+    .container {
+        overflow: hidden;
+        border-bottom: 1px solid var(--nf-border-color);
+        padding: 0;
+    }
+
+
+}
+
+.footer__social-menu-row {}
+
+.footer__social-section {
+    border-right: 1px solid var(--nf-border-color);
+    text-align: center;
+
+    &:last-child {
+        border-right: none;
+
+    }
+
+}
+
+.footer__social-link-wrapper {
+    padding: 20px 10px;
+
+    a {
+        font-weight: 500;
+        font-size: 30px;
+        line-height: 41px;
+        color: var(--nav-item-color-level-1);
+        text-transform: uppercase;
+        text-decoration: none;
+
+        &:hover {}
+    }
+}
+
+// footer__public =========================================
+
+
+.footer__public-row {
+    display: flex;
+    padding: 0 40px;
+    flex-wrap: wrap;
+    // padding: 20px;
+}
+
+.f-col {
+    // flex: 0;
+    // padding: 10px 10px;
+    margin-top: 20px;
+    margin-bottom: 20px;
+    margin-right: 30px;
+
+    &:last-child {
+        flex: 1;
+    }
+}
+
+.footer__public-link {
+    // margin: 20px 0;
+    display: block;
+    color: var(--nf-menu-item-color);
+
+    font-weight: 400;
+    font-size: 13px;
+    line-height: 18px;
+    text-align: left;
+    cursor: pointer;
+
+    &:hover {
+        color: var(--nf-menu-item-color-level-1);
+
+    }
+}
+
+.f-col-last {
+    .footer__public-link {
+        text-align: right;
+    }
+}
+
+.footer {
+    background-color: white;
+}
+
+// 

@@ -1,0 +1,367 @@
+@import '../vars.less';
+
+.fieldset {
+    border: none;
+    padding: 0;
+    margin-bottom: 3.3333rem;
+
+    @media(min-width: @big) {
+        margin-bottom: 5rem;
+    }
+
+}
+
+.legend {
+    margin: 1.67rem 0;
+
+    font-size: 1.5rem;
+    font-weight: 500;
+    line-height: 100%;
+    letter-spacing: -0.03rem;
+    text-transform: uppercase;
+}
+
+// Inputs
+
+.control {
+    position: relative;
+    display: flex;
+    align-items: center;
+    font-size: 1rem;
+}
+
+.control__icon {
+    position: absolute;
+    // left: 0;
+    margin: auto;
+    color: var(--nf-input-icon);
+    font-size: 2rem;
+}
+
+.control__button {
+    position: absolute;
+    right: 0;
+    height: 100%;
+    margin: auto;
+    border: none;
+
+    padding: 1.2em 1.4em;
+}
+
+
+.control--has-icon-right {
+    .input {
+        padding-right: 4.4rem;
+    }
+
+    .icon--right {
+        margin: auto .8em;
+        right: 0;
+    }
+}
+
+.control--has-icon-left {
+    .input {
+        padding-left: 4.4rem;
+    }
+
+    .icon--left {
+        margin: auto .8em;
+    }
+}
+
+.control--has-button {}
+
+.control__tooltip{
+    margin-left: 8px;
+    // position: relative;
+
+    .mi{
+        cursor: pointer;
+        color: var(--nf-input-icon);
+    }
+
+    .control__tooltip-content{
+        position: absolute;
+        display: none;
+        left: 0;
+        right: 0;
+        margin: auto;
+        bottom: 41px;
+        padding: 8px 12px;
+        background-color: #3b3b3b;
+        box-shadow: 5px 5px 0px 0 #91919180;
+        border: 1px solid black;
+        max-width: 300px;
+        border-radius: 5px;
+        line-height: 139%;
+        font-size: 1rem;
+        color: white;
+    }
+    &:hover .control__tooltip-content{
+        display: block;
+    }
+    // position: absolute;
+}
+
+.fieldset__desc{
+     text-transform: uppercase;
+     line-height: 120%;
+}
+
+.label {
+    display: inline-block;
+    color: var(--nf-main-text-color);
+    font-size: 1rem;
+    margin-bottom: .5rem;
+}
+
+
+
+.label--gray {
+    color: var(--nf-menu-item-color);
+}
+
+.input {
+    max-width: 100%;
+    width: 100%;
+
+    font-size: 1rem;
+    letter-spacing: -0.02667rem;
+
+    padding: 1.6667em 1em;
+    background-color: var(--nf-input-bg);
+    border-radius: 100px;
+
+    border: none;
+    text-overflow: ellipsis;
+    // height: 40px;
+
+
+    @media(min-width: @md) {
+        font-size: 1.16667rem;
+        padding: 1.6667em;
+
+    }
+
+    @media(min-width: @big) {
+        font-size: 1.3333rem;
+    }
+
+}
+
+.input--md {
+    font-size: 1rem;
+    padding: 1.33em;
+
+    @media(min-width: @md) {
+        font-size: 1.3333rem;
+        padding: 1.16667rem 1.67rem;
+
+    }
+
+}
+
+
+input::placeholder {
+    color: var(--nf-input-placeholder);
+    color: var(--nf-input-placeholder);
+    // opacity: 1;
+}
+
+
+input:focus {
+    outline-style: solid;
+    outline-color: var(--nf-input-border-color);
+
+    &~.icon {
+        color: var(--nf-input-label);
+    }
+}
+
+.input::before,
+.input::after {
+    content: '';
+    // contain: ;
+    display: block;
+    width: 10px;
+    height: 10px;
+    background-color: aqua;
+}
+
+.input--icon {}
+
+.input--has-icon-left {}
+
+.input--has-icon-right {}
+
+// -------------
+
+.input:disabled {
+    cursor: no-drop;
+    opacity: 1;
+
+    @li: var(--nf-input-bg);
+    @da: #e6e6e6;
+    background: linear-gradient(-45deg, @li 33%, @da 36%, @da 65%, @li 67%);
+    background-repeat: repeat-x;
+    background-size: 30%;
+
+    opacity: .6;
+
+    &~.icon {
+        opacity: .4;
+    }
+
+    &~.button {
+        opacity: .4;
+    }
+}
+
+// RADIO - CHECKBOX
+
+@ch-size: 20px;
+@ch-c-size: 10px;
+
+.checkbox,
+.radio {
+    position: absolute;
+    transform: translateX(-100vw);
+}
+
+.radio,
+.checkbox {
+    &+.label {
+        display: flex;
+        align-items: center;
+
+        font-size: 0.83333rem;
+        font-weight: 500;
+        line-height: 100%;
+        letter-spacing: -0.01667rem;
+        text-transform: uppercase;
+
+        padding-left: @ch-size + 12px;
+        padding-top: .5em;
+        padding-bottom: .5em;
+
+        margin-top: 0.75rem;
+        margin-bottom: 0.5rem;
+
+        cursor: pointer;
+
+        &::before,
+        &::after {
+            content: '';
+            position: absolute;
+            display: block;
+            left: 0;
+        }
+
+        @media(min-width: @lg) {
+            font-size: 1rem;
+        }
+    }
+
+    &+.label {
+        &::before {
+            width: @ch-size;
+            height: @ch-size;
+            border: 1px solid black;
+            // padding: 14px;
+        }
+
+        &::after {
+            // visibility: hidden;
+            width: @ch-c-size;
+            height: @ch-c-size;
+            margin-left: 5px;
+
+            transform: scale(2);
+            opacity: 0;
+            // border: 1px solid black;
+            // padding: 14px;
+            transition: all .2s;
+        }
+    }
+
+    &~.control__info {
+        display: none;
+        margin: 0;
+        margin-left: 20px;
+        font-size: 18px;
+
+        @media(min-width: @md) {
+            font-size: 26px;
+        }
+    }
+}
+
+.radio {
+    &+.label {
+        &::before {
+            border-radius: 40px;
+        }
+
+        &::after {
+            background-color: black;
+            border-radius: 40px;
+        }
+    }
+}
+
+.checkbox {
+    &+.label {
+        &::before {
+            border-radius: 0;
+            border-color: inherit;
+            // padding: 14px; 
+        }
+
+        &::after {
+            content: 'done';
+            .mi-icons-mix();
+
+            width: auto;
+            height: auto;
+            font-size: 1.6rem;
+            margin-left: 0px;
+        }
+    }
+}
+
+
+.radio:checked,
+.checkbox:checked {
+    &+.label::after {
+        // visibility: visible;
+        transform: scale(1);
+        opacity: 1;
+    }
+
+    &~.control__info {
+        display: block;
+
+    }
+}
+
+input:disabled{
+    opacity: .5;
+    cursor: not-allowed;
+
+    &+label,
+    &+.label{
+        opacity: .5; 
+        cursor: not-allowed;
+    }
+
+    label,
+    .label{
+        opacity: .5;  
+        cursor: not-allowed;
+    }
+}
+
+input:invalid{
+    border-color: 1px solid red;
+}

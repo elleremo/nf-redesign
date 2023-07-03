@@ -1,0 +1,83 @@
+@import "./vars.less";
+
+.v-gaper{
+
+}
+
+.v-gaper.is-fullwidth{
+    width: 100%;
+}
+
+.v-gaper.is-60{
+    height: 60px;
+}
+
+.v-gaper.is-40{
+    height: 40px;
+}
+
+.v-gaper.is-30{
+    height: 30px;
+}
+
+.v-gaper.is-20{
+    height: 20px;
+}
+
+.mt-4 { margin-top:4px}
+.mt-8 { margin-top:8px}
+.mt-12{ margin-top:12px}
+.mt-16{ margin-top:16px}
+.mt-20{ margin-top:20px}
+.mt-24{ margin-top:24px}
+.mt-28{ margin-top:28px}
+.mt-32{ margin-top:32px}
+.mt-36{ margin-top:36px}
+.mt-40{ margin-top:40px}
+
+.mb-4 { margin-bottom:4px}
+.mb-8 { margin-bottom:8px}
+.mb-12{ margin-bottom:12px}
+.mb-16{ margin-bottom:16px}
+.mb-20{ margin-bottom:20px}
+.mb-24{ margin-bottom:24px}
+.mb-28{ margin-bottom:28px}
+.mb-32{ margin-bottom:32px}
+.mb-36{ margin-bottom:36px}
+.mb-40{ margin-bottom:40px}
+ 
+
+// Dynamic font
+@df-base-font-size-val : unit(@nf-base-font-size);
+@df-diff-max-min-display : unit(@big - @xs);
+@df-min-display-val: @xs;
+
+.df(@min,@max){
+    @m : unit((@max - @min)) * @df-base-font-size-val; 
+    font-size: clamp(@min, calc((@min + @m * (100vw - @df-min-display-val) / @df-diff-max-min-display) ), @max)  ; 
+}
+
+
+// COLOR
+.--clr-gray{
+    color: var(--nf-input-label)
+}
+
+.mi-icons-mix(){
+    font-family: 'Material Icons';
+    font-weight: normal;
+    font-style: normal;
+    font-size: inherit;
+    line-height: 1;
+    letter-spacing: normal;
+    text-transform: none;
+    display: inline-block;
+    white-space: nowrap;
+    word-wrap: normal;
+    direction: ltr;
+    -moz-font-feature-settings: 'liga';
+}
+
+.mi{
+    .mi-icons-mix();
+}

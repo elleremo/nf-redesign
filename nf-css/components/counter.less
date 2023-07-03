@@ -1,0 +1,44 @@
+@import "../vars.less";
+
+
+.counter{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    
+    padding: .33rem;
+    
+    font-size: 1.33rem;
+
+    background-color: var( --nf-counter-bg);
+    border-radius: 100px;
+
+    @media(min-width: @md){
+        padding: .5rem;
+        font-size: 1.66667rem;
+    }
+}
+
+.counter__button{
+    font-size: 1em;
+    display: inline-block;
+    cursor: pointer;
+
+    // @media(min-width: none;)
+ 
+}
+.counter__button--end{
+    cursor: initial;
+    opacity: .3;
+}
+.counter_dec{
+    display: inline-block;
+  
+}
+.counter_inc{
+    display: inline-block;
+    
+}
+.counter_val{
+    margin: 0 1rem;
+}
