@@ -22,51 +22,51 @@
                         <tbody>
                             <tr>
                                 <td>рост</td>
-                                 <td>180</td>
-                                 <td>134</td>
-                                 <td>14.8</td>
-                                 <td>200</td>
-                                 <td>34</td>
+                                <td>180</td>
+                                <td>134</td>
+                                <td>14.8</td>
+                                <td>200</td>
+                                <td>34</td>
                             </tr>
                             <tr>
                                 <td>длина плеча</td>
-                                  <td>180</td>
-                                 <td>134</td>
-                                 <td>14.8</td>
-                                 <td>200</td>
-                                 <td>34</td>
-                                 <td>133.4</td>
-                                 <td>1.0</td>
+                                <td>180</td>
+                                <td>134</td>
+                                <td>14.8</td>
+                                <td>200</td>
+                                <td>34</td>
+                                <td>133.4</td>
+                                <td>1.0</td>
                             </tr>
                             <tr>
                                 <td>длина спинки</td>
-                                  <td>180</td>
-                                 <td>134</td>
-                                 <td>14.8</td>
-                                 <td>200</td>
-                                 <td>34</td>
-                                 <td>133.4</td>
-                                 <td>1.0</td>
+                                <td>180</td>
+                                <td>134</td>
+                                <td>14.8</td>
+                                <td>200</td>
+                                <td>34</td>
+                                <td>133.4</td>
+                                <td>1.0</td>
                             </tr>
                             <tr>
                                 <td>длина рукава</td>
-                                  <td>180</td>
-                                 <td>134</td>
-                                 <td>14.8</td>
-                                 <td>200</td>
-                                 <td>34</td>
-                                 <td>133.4</td>
-                                 <td>1.0</td>
+                                <td>180</td>
+                                <td>134</td>
+                                <td>14.8</td>
+                                <td>200</td>
+                                <td>34</td>
+                                <td>133.4</td>
+                                <td>1.0</td>
                             </tr>
                             <tr>
                                 <td>ширина переда</td>
-                                  <td>180</td>
-                                 <td>134</td>
-                                 <td>14.8</td>
-                                 <td>200</td>
-                                 <td>34</td>
-                                 <td>133.4</td>
-                                 <td>1.0</td>
+                                <td>180</td>
+                                <td>134</td>
+                                <td>14.8</td>
+                                <td>200</td>
+                                <td>34</td>
+                                <td>133.4</td>
+                                <td>1.0</td>
                             </tr>
                         </tbody>
                     </table>
@@ -156,21 +156,127 @@
                             </div>
 
 
+                            <div class="product-page__add-to-cart">
+                                <div class="row">
+                                    <div class="col is-16 is-md-8"><button class="button product-page__button">Добавить в
+                                            корзину</button></div>
+                                    <div class="col is-16 is-md-8"><button
+                                            class="button button--secondary product-page__button">В избранное</button></div>
+                                </div>
+                            </div>
                             <!-- <button class="button">elwmgvwmeg</button> -->
                         </div>
                     </div>
                 </div>
 
                 <div class="product-page__images">
-                    <div class="product-page__images-item" v-for="(card, key) in new Array(4)">
-                        <img :src="`../../public/product_page/${key + 3}.png`" alt="" class="product-card__image">
+                    <div class="swiper">
+                        <!-- Additional required wrapper -->
+                        <div class="swiper-wrapper">
+                            <div class="swiper-slide  " v-for="(card, key) in new Array(4)">
+                                <img :src="`../../public/product_page/${key + 3}.png`" alt="" class="product-card__image">
+                            </div>
+                        </div>
+
                     </div>
                 </div>
 
             </div>
 
-            <div class="product-page__layout-outer">
+            <div class="container   product-page__layout-outer">
+                <div class="product-page__review product-page__review-1">
+                    <div class="row is-gap-0">
+                        <div class="col is-16 is-lg-8 is-lg-order-n2">
+                            <div class="review-text product-page__review-text">
+                                <h3 class="review-text__title">Передний принт</h3>
+                                <h4 class="review-text__subtitle">GOD OF THUNDER</h4>
+                                <p class="review-text__desc">На одежде изображён Зенитцу в образе бога грома.
+                                    NikiFilini
+                                    постаралась в полной мере
+                                    изобразить историю этого персонажа и его чувств при помощи 7 уникальных принтов.
+                                    Каждый
+                                    принт был вдохновлён событиями оригинальной сюжетной линии популярного аниме
+                                    Клинок
+                                    рассекающий демонов.</p>
+                            </div>
+                        </div>
+                        <div class="col is-16  ">
+                            <div class="review-image product-page__review-image">
+                                <img src="../../public/product_page/front.png" alt="">
+                            </div>
+                        </div>
+                        <div class="col is-16 is-lg-8 is-lg-order-n1">
+                            <div class="review-text product-page__review-text">
+                                <h3 class="review-text__title">Задний принт</h3>
+                                <h4 class="review-text__subtitle">GOD OF THUNDER</h4>
+                                <p class="review-text__desc">На одежде изображён Зенитцу в образе бога грома.
+                                    NikiFilini
+                                    постаралась в полной мере
+                                    изобразить историю этого персонажа и его чувств при помощи 7 уникальных принтов.
+                                    Каждый
+                                    принт был вдохновлён событиями оригинальной сюжетной линии популярного аниме
+                                    Клинок
+                                    рассекающий демонов.</p>
+                            </div>
+                        </div>
+                        <div class="col is-16 ">
+                            <div class="review-image product-page__review-image">
+                                <img src="../../public/product_page/back.png" alt="">
+                            </div>
+                        </div>
 
+                        <div class="col is-16">
+                            <div class="review-text product-page__review-text">
+                                <h3 class="review-text__title">История Товара / идеи</h3>
+                                <h4 class="review-text__subtitle">GOD OF THUNDER</h4>
+                                <p class="review-text__desc">Благодаря высококачественному плотному хлопку, худи
+                                    очень
+                                    мягкое, долго сохраняет объём, не скатывается в процессе носки и хорошо держит
+                                    тепло.
+                                    Объемный капюшон сможет надежно защитить вас от ветра. В нижней части худи
+                                    расположен
+                                    просторный карман, имеющий два отсека для хранения самых важных вещей</p>
+                            </div>
+                        </div>
+
+                        <div class="col is-16">
+                            <div class="review-image product-page__review-image">
+                                <img src="../../public/product_page/big-1.png" alt="">
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="row is-gap-0 is-middle is-center">
+                        <div class="col is-8 is-md-5 ">
+                            <div class="review-image product-page__review-image">
+                                <img src="../../public/product_page/left.png" alt="">
+                            </div>
+                        </div>
+                        <div class="col is-12 is-md-6 is-order-n1 is-md-order-unset">
+                            <div class="review-text product-page__review-text">
+                                <h3 class="review-text__title">OUTLOOK</h3>
+                                <h4 class="review-text__subtitle">GOD OF THUNDER</h4>
+                                <p class="review-text__desc">На одежде изображён Зенитцу в образе бога грома.
+                                    NikiFilini
+                                    постаралась в полной мере изобразить историю этого персонажа и его чувств при
+                                    помощи 7
+                                    уникальных принтов. Каждый принт был вдохновлён событиями оригинальной сюжетной
+                                    линии
+                                    популярного аниме Клинок рассекающий демонов.</p>
+                            </div>
+                        </div>
+                        <div class="col is-8 is-md-5">
+                            <div class="review-image product-page__review-image">
+                                <img src="../../public/product_page/right.png" alt="">
+                            </div>
+                        </div>
+                        <div class="col is-16">
+                            <div class="review-image product-page__review-image">
+                                <img src="../../public/product_page/big-2.png" alt="">
+                            </div>
+                        </div>
+                    </div>
+                </div>
             </div>
         </div>
     </div>
@@ -178,6 +284,10 @@
 
 <script>
 // import ProductCard from '../components/site/ProductCard.vue';
+// import Slick from 'slick-carousel';
+
+// core version + navigation, pagination modules:
+
 
 export default {
     data() {
@@ -190,8 +300,47 @@ export default {
             linkAttributeName: "data-hystmodal-size",
             //settings (optional). see Configuration
         });
+
+        this.initSwiper()
+
     },
+
+
     methods: {
+        initSwiper: () => {
+            var bp  = 1024;
+
+            var swiper = new Swiper('.swiper', {
+                // Optional parameters
+                // direction: 'vertical',
+                // loop: true,
+
+                // If we need pagination
+                breakpoints: {
+                    // when window width is >= 640px
+                    1024: {
+                        slidesPerView: 1,
+                    }
+                }
+            });
+      
+
+            if (window.innerWidth > bp) {
+                
+                swiper.disable()
+            }
+
+            swiper.on('breakpoint', function (swiper, breakpointParams) {
+                // console.log(swiper.width);
+                if (window.innerWidth > bp) {
+                    swiper.disable()
+                }
+                else {
+                    swiper.enable()
+                }
+            });
+        },
+
         tabsClick: function (el) {
             // console.log(el);
             let element = el.srcElement;

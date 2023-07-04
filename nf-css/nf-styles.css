@@ -1771,6 +1771,12 @@ input:invalid {
 .product-page__layout-inner {
   display: flex;
   flex-wrap: wrap;
+  margin-bottom: 4rem;
+}
+@media (min-width: 1024px) {
+  .product-page__layout-inner {
+    margin-bottom: 8rem;
+  }
 }
 .product-page__content-wpapper {
   flex: 100%;
@@ -1780,6 +1786,7 @@ input:invalid {
   .product-page__content-wpapper {
     flex: 8;
     width: auto;
+    width: 50%;
   }
 }
 .product-page__content {
@@ -1796,7 +1803,11 @@ input:invalid {
     flex: 5;
     order: unset;
     width: auto;
-    margin-left: 100px;
+    margin-left: 10%;
+    width: 40%;
+  }
+  .product-page__images .swiper-wrapper {
+    display: block;
   }
 }
 .product-page__size-table-link {
@@ -1811,12 +1822,22 @@ input:invalid {
   color: var(--nf-cart-item-old-price);
 }
 .product-page p {
-  font-size: 1.33333rem;
+  font-size: 1rem;
   font-weight: 300;
   line-height: 120%;
   letter-spacing: -0.32px;
   color: var(--nf-color);
   opacity: 0.8;
+}
+@media (min-width: 1024px) {
+  .product-page p {
+    font-size: 1.16667rem;
+  }
+}
+@media (min-width: 1600px) {
+  .product-page p {
+    font-size: 1.33333rem;
+  }
 }
 .product-page__price {
   font-size: 1.83333rem;
@@ -1839,6 +1860,61 @@ input:invalid {
 }
 .scroll-line {
   overflow-x: auto;
+}
+.product-page__button {
+  width: 100%;
+}
+.product-page__add-to-cart {
+  margin-top: 4rem;
+}
+.product-page__layout-outer {
+  padding: 0;
+}
+.review-text {
+  text-align: center;
+  max-width: 34rem;
+  width: 100%;
+  margin: auto;
+  padding: 0 0.8rem;
+}
+.review-image img {
+  width: 100%;
+  object-fit: contain;
+}
+.review-text__title {
+  margin-top: 0.5em;
+  margin-bottom: 0.5em;
+  font-size: 2.33333rem;
+  font-weight: 500;
+  line-height: 120%;
+  letter-spacing: -0.11667rem;
+  text-transform: uppercase;
+}
+.review-text__subtitle {
+  margin-top: 1em;
+  margin-bottom: 1.2em;
+  font-size: 1.16667rem;
+  font-weight: 500;
+  line-height: 100%;
+  letter-spacing: -0.02333rem;
+  text-transform: uppercase;
+}
+.review-text__desc {
+  margin-top: 1.33em;
+  font-size: 1rem;
+  font-weight: 300;
+  line-height: 120%;
+  letter-spacing: -0.02rem;
+}
+@media (min-width: 1024px) {
+  .review-text__desc {
+    font-size: 1.16667rem;
+  }
+}
+@media (min-width: 1600px) {
+  .review-text__desc {
+    font-size: 1.33333rem;
+  }
 }
 .cart__page-title {
   margin-top: 1.5em;

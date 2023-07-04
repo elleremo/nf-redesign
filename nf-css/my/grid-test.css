@@ -57,6 +57,33 @@ Row generate functions
   flex: none;
   width: auto;
 }
+.col.is-order-n1 {
+  order: -1;
+}
+.col.is-order-n2 {
+  order: -2;
+}
+.col.is-order-n3 {
+  order: -3;
+}
+.col.is-order-n4 {
+  order: -4;
+}
+.col.is-order-p1 {
+  order: 1;
+}
+.col.is-order-p2 {
+  order: 2;
+}
+.col.is-order-p3 {
+  order: 3;
+}
+.col.is-order-p4 {
+  order: 4;
+}
+.col.is-order-unset {
+  order: unset;
+}
 .col.is-1 {
   flex: none;
   width: 6.25%;
@@ -336,6 +363,33 @@ Row generate functions
   .col.is-sm-auto {
     flex: none;
     width: auto;
+  }
+  .col.is-sm-order-n1 {
+    order: -1;
+  }
+  .col.is-sm-order-n2 {
+    order: -2;
+  }
+  .col.is-sm-order-n3 {
+    order: -3;
+  }
+  .col.is-sm-order-n4 {
+    order: -4;
+  }
+  .col.is-sm-order-p1 {
+    order: 1;
+  }
+  .col.is-sm-order-p2 {
+    order: 2;
+  }
+  .col.is-sm-order-p3 {
+    order: 3;
+  }
+  .col.is-sm-order-p4 {
+    order: 4;
+  }
+  .col.is-sm-order-unset {
+    order: unset;
   }
   .col.is-sm-1 {
     flex: none;
@@ -622,6 +676,33 @@ Row generate functions
     flex: none;
     width: auto;
   }
+  .col.is-md-order-n1 {
+    order: -1;
+  }
+  .col.is-md-order-n2 {
+    order: -2;
+  }
+  .col.is-md-order-n3 {
+    order: -3;
+  }
+  .col.is-md-order-n4 {
+    order: -4;
+  }
+  .col.is-md-order-p1 {
+    order: 1;
+  }
+  .col.is-md-order-p2 {
+    order: 2;
+  }
+  .col.is-md-order-p3 {
+    order: 3;
+  }
+  .col.is-md-order-p4 {
+    order: 4;
+  }
+  .col.is-md-order-unset {
+    order: unset;
+  }
   .col.is-md-1 {
     flex: none;
     width: 6.25%;
@@ -907,6 +988,33 @@ Row generate functions
     flex: none;
     width: auto;
   }
+  .col.is-lg-order-n1 {
+    order: -1;
+  }
+  .col.is-lg-order-n2 {
+    order: -2;
+  }
+  .col.is-lg-order-n3 {
+    order: -3;
+  }
+  .col.is-lg-order-n4 {
+    order: -4;
+  }
+  .col.is-lg-order-p1 {
+    order: 1;
+  }
+  .col.is-lg-order-p2 {
+    order: 2;
+  }
+  .col.is-lg-order-p3 {
+    order: 3;
+  }
+  .col.is-lg-order-p4 {
+    order: 4;
+  }
+  .col.is-lg-order-unset {
+    order: unset;
+  }
   .col.is-lg-1 {
     flex: none;
     width: 6.25%;
@@ -1191,6 +1299,33 @@ Row generate functions
   .col.is-big-auto {
     flex: none;
     width: auto;
+  }
+  .col.is-big-order-n1 {
+    order: -1;
+  }
+  .col.is-big-order-n2 {
+    order: -2;
+  }
+  .col.is-big-order-n3 {
+    order: -3;
+  }
+  .col.is-big-order-n4 {
+    order: -4;
+  }
+  .col.is-big-order-p1 {
+    order: 1;
+  }
+  .col.is-big-order-p2 {
+    order: 2;
+  }
+  .col.is-big-order-p3 {
+    order: 3;
+  }
+  .col.is-big-order-p4 {
+    order: 4;
+  }
+  .col.is-big-order-unset {
+    order: unset;
   }
   .col.is-big-1 {
     flex: none;
