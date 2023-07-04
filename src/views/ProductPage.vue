@@ -174,10 +174,9 @@
                         <!-- Additional required wrapper -->
                         <div class="swiper-wrapper">
                             <div class="swiper-slide  " v-for="(card, key) in new Array(4)">
-                                <img :src="`../../public/product_page/${key + 3}.png`" alt="" class="product-card__image">
+                                <img :src="`/product_page/${key + 3}.png`" alt="" class="product-card__image">
                             </div>
                         </div>
-
                     </div>
                 </div>
 
@@ -202,7 +201,7 @@
                         </div>
                         <div class="col is-16  ">
                             <div class="review-image product-page__review-image">
-                                <img src="../../public/product_page/front.png" alt="">
+                                <img src="/product_page/front.png" alt="">
                             </div>
                         </div>
                         <div class="col is-16 is-lg-8 is-lg-order-n1">
@@ -221,7 +220,7 @@
                         </div>
                         <div class="col is-16 ">
                             <div class="review-image product-page__review-image">
-                                <img src="../../public/product_page/back.png" alt="">
+                                <img src="/product_page/back.png" alt="">
                             </div>
                         </div>
 
@@ -241,7 +240,7 @@
 
                         <div class="col is-16">
                             <div class="review-image product-page__review-image">
-                                <img src="../../public/product_page/big-1.png" alt="">
+                                <img src="/product_page/big-1.png" alt="">
                             </div>
                         </div>
                     </div>
@@ -249,7 +248,7 @@
                     <div class="row is-gap-0 is-middle is-center">
                         <div class="col is-8 is-md-5 ">
                             <div class="review-image product-page__review-image">
-                                <img src="../../public/product_page/left.png" alt="">
+                                <img src="/product_page/left.png" alt="">
                             </div>
                         </div>
                         <div class="col is-12 is-md-6 is-order-n1 is-md-order-unset">
@@ -267,12 +266,41 @@
                         </div>
                         <div class="col is-8 is-md-5">
                             <div class="review-image product-page__review-image">
-                                <img src="../../public/product_page/right.png" alt="">
+                                <img src="/product_page/right.png" alt="">
                             </div>
                         </div>
                         <div class="col is-16">
                             <div class="review-image product-page__review-image">
-                                <img src="../../public/product_page/big-2.png" alt="">
+                                <img src="/product_page/big-2.png" alt="">
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="contanier">
+                <div class="product-slider">
+                    <div class="product-slider__top">
+                        <div class="product-slider__title">похожие товары</div>
+                        <div class="product-slider__controls">
+                            <div class="product-slider__button product-slider__button-prev">
+                                <i class="mi icon--24">west</i>
+                            </div>
+                            <div class="product-slider__button product-slider__button-next">
+                                <i class="mi icon--24">east</i>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="product-slider__wrapper">
+                        <div class="swiper swiper-slider">
+                            <!-- Additional required wrapper -->
+
+
+                            <div class="swiper-wrapper">
+                                <div class="swiper-slide product-slider__slide" v-for="(card, key) in new Array(8)">
+                                    <ProductCard :keyn="key" />
+                                </div>
+
                             </div>
                         </div>
                     </div>
@@ -283,13 +311,16 @@
 </template>
 
 <script>
-// import ProductCard from '../components/site/ProductCard.vue';
-// import Slick from 'slick-carousel';
+import ProductCard from '../components/site/ProductCard.vue';
 
-// core version + navigation, pagination modules:
+import Swiper from 'swiper/bundle';
 
+// import styles bundle
+import 'swiper/css/bundle'
 
 export default {
+    components: { ProductCard },
+
     data() {
         return {
             currentTabId: 2
@@ -301,16 +332,28 @@ export default {
             //settings (optional). see Configuration
         });
 
-        this.initSwiper()
+
+        // document.onload(() => {
+        //     console.log('onload')
+        // })
+
+        window.onload = () => { // можно также использовать window.addEventListener('load', (event) => {
+            this.initSwiper();
+            this.initSwiperSlider();
+        };
+
+
 
     },
 
 
     methods: {
         initSwiper: () => {
-            var bp  = 1024;
+            console.log('initSwiper')
 
-            var swiper = new Swiper('.swiper', {
+            var bp = 1024;
+            var isEnable = false;
+            var swiperP = new Swiper('.swiper', {
                 // Optional parameters
                 // direction: 'vertical',
                 // loop: true,
@@ -321,26 +364,96 @@ export default {
                     1024: {
                         slidesPerView: 1,
                     }
-                }
+                },
+
+                on: {
+                    init: function () {
+                        console.log('swiper initialized');
+                    },
+                    breakpoint: function (swiper) {
+                     
+                        if (window.innerWidth > bp) {
+                            swiper.disable()
+                            console.log('swiper disable');
+                        }
+                        else {
+                            swiper.enable()
+                            console.log('swiper enable');
+
+                        }
+                    }
+
+                },
             });
-      
 
-            if (window.innerWidth > bp) {
-                
-                swiper.disable()
-            }
+            isEnable = true;
 
-            swiper.on('breakpoint', function (swiper, breakpointParams) {
-                // console.log(swiper.width);
-                if (window.innerWidth > bp) {
-                    swiper.disable()
-                }
-                else {
-                    swiper.enable()
+            // swiperP.on('afterInit', () => {
+            //     console.log('swiperP INIT');
+
+            // })
+
+            // var myybeChange = () => {
+            //     console.log('MAYBE CHANGE');
+
+
+            //     if (window.innerWidth > bp && isEnable == true) {
+            //         swiperP.disable()
+            //         isEnable = false;
+            //         console.log('swiper disable');
+            //     } else if (isEnable == false) {
+            //         swiperP.enable()
+            //         isEnable = true;
+            //         console.log('swiper enable');
+            //     }
+            // }
+
+            // myybeChange();
+
+
+            // window.addEventListener('resize', () => {
+            //     myybeChange();
+            // })
+
+            // swiper.on('breakpoint', function (swiper, breakpointParams) {
+            //     // console.log(swiper.width);
+            //     if (window.innerWidth > bp) {
+            //         swiper.disable()
+            //         console.log('swiper disable');
+            //     }
+            //     else {
+            //         swiper.enable()
+            //         console.log('swiper enable');
+
+            //     }
+            // });
+        },
+
+        initSwiperSlider: () => {
+            console.log('initSwiperSlider')
+
+            var swiper2 = new Swiper('.swiper-slider', {
+                // Optional parameters
+                // direction: 'vertical',
+                // loop: true,
+                slidesPerView: 2,
+                navigation: {
+                    nextEl: '.product-slider__button-next',
+                    prevEl: '.product-slider__button-prev',
+                },
+                // spaceBetween: -1,
+                // If we need pagination
+                breakpoints: {
+                    // when window width is >= 640px
+                    640: {
+                        slidesPerView: 3,
+                    },
+                    1024: {
+                        slidesPerView: 4,
+                    }
                 }
             });
         },
-
         tabsClick: function (el) {
             // console.log(el);
             let element = el.srcElement;

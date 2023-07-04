@@ -3,7 +3,7 @@
         <span class="badge product-card__badge">SALE</span>
         <div class="product-card__image-wrapper">
       
-            <img :src="`../../public/product_images/${keyn + 1}.png`" alt="" class="product-card__image">
+            <img :src="`/product_images/${keyn + 1}.png`" alt="" class="product-card__image">
         </div>
         <div class="product-card__text">
             <h3 class="product-card__name">
@@ -20,6 +20,7 @@
 
 
 export default {
+    
     props: {
         keyn: Number
     }, 
@@ -32,7 +33,7 @@ export default {
     },
 
     mounted(){
-        console.log( this.props );
+        // console.log( this.props );
     }
 }
 </script>
