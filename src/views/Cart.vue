@@ -161,7 +161,7 @@
                     <div class="cart__items">
                         <div class="cart-item cart__item" v-for="(key) in new Array(8)">
                             <div class="cart-item__image-wrapper">
-                                <img class="cart-item__image" src="../../public/product_images/product_cart_image.png"
+                                <img class="cart-item__image" src="/product_images/product_cart_image.png"
                                     alt="">
                             </div>
                             <div class="cart-item__info-wrapper">

@@ -1413,6 +1413,16 @@ input:invalid {
 .user-menu__icon-wrapper {
   margin: 8px 16px;
 }
+.header__nav-menu-wrapper,
+.header__nav-user-menu-wrapper {
+  display: none;
+}
+@media (min-width: 1024px) {
+  .header__nav-menu-wrapper,
+  .header__nav-user-menu-wrapper {
+    display: initial;
+  }
+}
 .footer__wp {
   border-bottom: 1px solid black;
 }
