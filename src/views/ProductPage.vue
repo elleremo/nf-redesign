@@ -174,7 +174,7 @@
                         <!-- Additional required wrapper -->
                         <div class="swiper-wrapper">
                             <div class="swiper-slide  " v-for="(card, key) in new Array(4)">
-                                <img :src="`/product_page/${key + 3}.png`" alt="" class="product-card__image">
+                                <img :src="`/nf-build-redesign/product_page/${key + 3}.png`" alt="" class="product-card__image">
                             </div>
                         </div>
                     </div>
