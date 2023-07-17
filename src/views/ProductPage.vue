@@ -338,10 +338,10 @@ export default {
         // })
 
         window.onload = () => { // можно также использовать window.addEventListener('load', (event) => {
-            this.initSwiper();
-            this.initSwiperSlider();
+            
         };
-
+        this.initSwiper();
+            this.initSwiperSlider();
 
 
     },

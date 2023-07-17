@@ -1,7 +1,7 @@
 <template>
     <fieldset class="fieldset cart__form-fieldset">
 
-        <div class="row">
+        <div class="row is-gap-0">
             <div class="col">
                 <legend class="legend">способ оплаты</legend>
 

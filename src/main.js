@@ -4,8 +4,6 @@ import router from './router'
 
 // import {} from "magnific-popup";
 // core version + navigation, pagination modules:
- 
- 
 
 
 import 'material-icons/iconfont/outlined.css';
